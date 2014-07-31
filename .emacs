@@ -6,10 +6,10 @@
 (package-initialize)
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
-(setq bash-profile
-      (if on-mac "~/.bash_profile" "~/.bashrc"))
-(let ((path (shell-command-to-string
-             (concat ". " bash-profile "; echo -n $PATH"))))
+(let* ((bash-profile
+        (if on-mac "~/.bash_profile" "~/.bashrc"))
+       (path (shell-command-to-string
+              (concat ". " bash-profile "; echo -n $PATH"))))
   (setenv "PATH" path)
   (setq exec-path
         (append
