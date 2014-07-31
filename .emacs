@@ -109,6 +109,7 @@
 (setq-default scroll-preserve-screen-position t)
 
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+(add-hook 'haskell-mode-hook 'interactive-haskell-mode)
 
 (require 'google-c-style)
 (add-hook 'c-mode-common-hook 'google-set-c-style)
