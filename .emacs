@@ -67,6 +67,7 @@
        '(("\\.c\\'"          . "clang -O2 %f -o %n && ./%n")
          ("\\.[Cc]+[Pp]*\\'" . "clang++ -std=c++11 -O2 %f -o %n && ./%n")
          ("\\.hs\\'"         . "ghc -O2 %f && ./%n")
+         ("\\.py\\'"         . "python %f")
          ("\\.go\\'"         . "go build %f && ./%n"))
        smart-compile-alist))
 
