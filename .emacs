@@ -33,6 +33,9 @@
       (append
        '(haskell-interactive-mode)
        evil-emacs-state-modes))
+(setq evil-lookup-func #'man)
+(evil-define-motion evil-lookup ()
+  (call-interactively evil-lookup-func))
 (evil-mode 1)
 
 (require 'evil-leader)
