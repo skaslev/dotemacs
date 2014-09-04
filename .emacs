@@ -87,6 +87,8 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
        '(("\\.c\\'"          . "clang -O2 %f -o %n && ./%n")
          ("\\.[Cc]+[Pp]*\\'" . "clang++ -std=c++11 -O2 %f -o %n && ./%n")
          ("\\.hs\\'"         . "ghc -O2 %f && ./%n")
+         ("\\.js\\'"         . "node %f")
+         ("\\.lua\\'"        . "lua %f")
          ("\\.py\\'"         . "python %f")
          ("\\.go\\'"         . "go build %f && ./%n"))
        smart-compile-alist))
@@ -121,6 +123,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (setq parens-require-spaces nil)
 (setq ido-enable-flex-matching t)
 (setq ido-create-new-buffer 'always)
+(setq lua-indent-level 2)
 (setq shell-file-name "bash")
 (setq explicit-shell-file-name "bash")
 (setq kill-buffer-query-functions
