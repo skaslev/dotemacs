@@ -84,8 +84,8 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (require 'smart-compile)
 (setq smart-compile-alist
       (append
-       '(("\\.c\\'"          . "clang -O2 %f -o %n && ./%n")
-         ("\\.[Cc]+[Pp]*\\'" . "clang++ -std=c++11 -O2 %f -o %n && ./%n")
+       '(("\\.c\\'"          . "clang -Wall -O2 %f -o %n && ./%n")
+         ("\\.[Cc]+[Pp]*\\'" . "clang++ -std=c++11 -Wall -O2 %f -o %n && ./%n")
          ("\\.hs\\'"         . "ghc -O2 %f && ./%n")
          ("\\.js\\'"         . "node %f")
          ("\\.lua\\'"        . "lua %f")
@@ -94,7 +94,8 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
        smart-compile-alist))
 
 (setq auto-mode-alist
-      (append '(("\\.h\\'"  . c++-mode)
+      (append '(("\\.cl\\'" . c-mode)
+                ("\\.h\\'"  . c++-mode)
                 ("\\.sc\\'" . python-mode))
               auto-mode-alist))
 
