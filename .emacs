@@ -63,8 +63,8 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   "g" 'dired
   "b" 'switch-to-buffer
   "d" 'kill-buffer
-  "j" 'scroll-up
-  "k" 'scroll-down
+  "j" 'scroll-up-command
+  "k" 'scroll-down-command
   "n" 'linum-mode
   "w" 'whitespace-mode
   "c" 'smart-compile
