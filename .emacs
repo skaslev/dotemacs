@@ -101,8 +101,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
               auto-mode-alist))
 
 (ido-mode 1)
-(if (not (display-graphic-p))
-    (menu-bar-mode 0))
+(menu-bar-mode 0)
 (tool-bar-mode 0)
 (scroll-bar-mode 0)
 (show-paren-mode 1)
