@@ -118,7 +118,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (setq confirm-nonexistent-file-or-buffer nil)
 (setq inhibit-startup-message t)
 (setq visible-bell nil)
-(setq bell-volume 0)
+(setq ring-bell-function 'ignore)
 (setq scroll-step 1)
 (setq make-backup-files nil)
 (setq windmove-wrap-around t)
