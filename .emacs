@@ -97,6 +97,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (ido-mode 1)
 (menu-bar-mode 0)
 (tool-bar-mode 0)
+(scroll-bar-mode 0)
 (show-paren-mode 1)
 (which-func-mode 1)
 (line-number-mode 1)
