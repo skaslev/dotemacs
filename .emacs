@@ -6,15 +6,6 @@
 (package-initialize)
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
-(let* ((bash-profile (if on-mac "~/.bash_profile" "~/.bashrc"))
-       (path (shell-command-to-string
-              (concat ". " bash-profile "; echo -n $PATH"))))
-  (setenv "PATH" path)
-  (setq exec-path
-        (append
-         (split-string-and-unquote path ":")
-         exec-path)))
-
 (load-theme 'busybee t)
 (cond
  (on-mac (set-default-font "Monaco 18"))
