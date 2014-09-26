@@ -15,8 +15,7 @@
          (split-string-and-unquote path ":")
          exec-path)))
 
-(if (display-graphic-p)
-    (load-theme 'busybee t))
+(load-theme 'busybee t)
 (cond
  (on-mac (set-default-font "Monaco 18"))
  (on-linux (set-default-font "Bitstream Vera Sans Mono-14")))
@@ -103,7 +102,6 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (ido-mode 1)
 (menu-bar-mode 0)
 (tool-bar-mode 0)
-(scroll-bar-mode 0)
 (show-paren-mode 1)
 (which-func-mode 1)
 (line-number-mode 1)
