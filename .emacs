@@ -55,6 +55,9 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (define-key minibuffer-local-must-match-map [escape] 'minibuffer-keyboard-quit)
 (define-key minibuffer-local-isearch-map [escape] 'minibuffer-keyboard-quit)(define-key evil-normal-state-map [escape] 'keyboard-quit)
 
+(require 'evil-search-highlight-persist)
+(global-evil-search-highlight-persist t)
+
 (require 'evil-leader)
 (global-evil-leader-mode)
 (evil-leader/set-leader "<SPC>")
@@ -68,7 +71,8 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   "n" 'linum-mode
   "w" 'whitespace-mode
   "c" 'smart-compile
-  "e" 'next-error)
+  "e" 'next-error
+  "/" 'evil-search-highlight-persist-remove-all)
 (evil-leader/set-key-for-mode 'haskell-mode
   "l" 'haskell-process-load-file
   "t" 'haskell-process-do-type
