@@ -63,6 +63,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   "w" 'whitespace-mode
   "c" 'smart-compile
   "e" 'next-error
+  "r" 'find-grep
   "/" 'evil-search-highlight-persist-remove-all)
 (evil-leader/set-key-for-mode 'haskell-mode
   "l" 'haskell-process-load-file
