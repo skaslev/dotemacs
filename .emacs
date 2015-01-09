@@ -53,22 +53,23 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (global-evil-leader-mode)
 (evil-leader/set-leader "<SPC>")
 (evil-leader/set-key
+  "/" 'evil-search-highlight-persist-remove-all
+  "b" 'switch-to-buffer
+  "c" 'smart-compile
+  "d" 'kill-buffer
+  "e" 'next-error
   "f" 'find-file
   "g" 'dired
-  "b" 'switch-to-buffer
-  "d" 'kill-buffer
   "j" 'scroll-up-command
   "k" 'scroll-down-command
   "n" 'linum-mode
-  "w" 'whitespace-mode
-  "c" 'smart-compile
-  "e" 'next-error
   "r" 'find-grep
-  "/" 'evil-search-highlight-persist-remove-all)
+  "t" 'delete-trailing-whitespace
+  "w" 'whitespace-mode)
 (evil-leader/set-key-for-mode 'haskell-mode
+  "i" 'haskell-process-do-info
   "l" 'haskell-process-load-file
   "t" 'haskell-process-do-type
-  "i" 'haskell-process-do-info
   "v" 'haskell-interactive-switch)
 
 (require 'evil-surround)
