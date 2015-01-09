@@ -8,8 +8,8 @@
 
 (load-theme 'busybee t)
 (cond
- (on-mac (set-default-font "Monaco 18"))
- (on-linux (set-default-font "Bitstream Vera Sans Mono-14")))
+ (on-mac (set-frame-font "Monaco 18"))
+ (on-linux (set-frame-font "Bitstream Vera Sans Mono-14")))
 (setq initial-frame-alist '((fullscreen . maximized)))
 
 (global-set-key (kbd "C-+") 'text-scale-increase)
@@ -100,7 +100,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (tool-bar-mode 0)
 (scroll-bar-mode 0)
 (show-paren-mode 1)
-(which-func-mode 1)
+(which-function-mode 1)
 (line-number-mode 1)
 (column-number-mode 1)
 (dynamic-completion-mode 1)
