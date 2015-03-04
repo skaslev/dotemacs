@@ -133,6 +133,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (setq-default indent-tabs-mode nil)
 (setq-default show-trailing-whitespace t)
 (setq-default scroll-preserve-screen-position t)
+(setq-default js-indent-level 2)
 
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 (add-hook 'haskell-mode-hook 'interactive-haskell-mode)
