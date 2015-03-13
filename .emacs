@@ -1,6 +1,6 @@
-(setq on-mac     (eq 'darwin system-type))
-(setq on-linux   (eq 'gnu/linux system-type))
-(setq on-windows (eq 'windows-nt system-type))
+(setq on-mac     (eq system-type 'darwin))
+(setq on-linux   (eq system-type 'gnu/linux))
+(setq on-windows (eq system-type 'windows-nt))
 
 (require 'package)
 (package-initialize)
@@ -8,9 +8,9 @@
 
 (load-theme 'busybee t)
 (cond
- (on-mac (set-frame-font "Monaco 18"))
- (on-linux (set-frame-font "Bitstream Vera Sans Mono-14")))
-(setq initial-frame-alist '((fullscreen . maximized)))
+ (on-mac (add-to-list 'default-frame-alist '(font . "Monaco 18")))
+ (on-linux (add-to-list 'default-frame-alist '(font . "Bitstream Vera Sans Mono-14"))))
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
 
 (global-set-key (kbd "C-+") 'text-scale-increase)
 (global-set-key (kbd "C-=") 'text-scale-increase)
@@ -54,6 +54,8 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (evil-leader/set-leader "<SPC>")
 (evil-leader/set-key
   "/" 'evil-search-highlight-persist-remove-all
+  "n" 'evil-next-buffer
+  "p" 'evil-prev-buffer
   "b" 'switch-to-buffer
   "c" 'smart-compile
   "d" 'kill-buffer
@@ -62,7 +64,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   "g" 'dired
   "j" 'scroll-up-command
   "k" 'scroll-down-command
-  "n" 'linum-mode
+  "l" 'linum-mode
   "r" 'find-grep
   "t" 'delete-trailing-whitespace
   "w" 'whitespace-mode)
@@ -91,10 +93,11 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
        smart-compile-alist))
 
 (setq auto-mode-alist
-      (append '(("\\.cl\\'" . c-mode)
-                ("\\.h\\'"  . c++-mode)
-                ("\\.sc\\'" . python-mode))
-              auto-mode-alist))
+      (append
+       '(("\\.cl\\'" . c-mode)
+         ("\\.h\\'"  . c++-mode)
+         ("\\.sc\\'" . python-mode))
+       auto-mode-alist))
 
 (ido-mode 1)
 (menu-bar-mode 0)
