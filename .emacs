@@ -62,6 +62,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   "e" 'next-error
   "f" 'find-file
   "g" 'dired
+  "h" 'google-this
   "j" 'scroll-up-command
   "k" 'scroll-down-command
   "l" 'linum-mode
