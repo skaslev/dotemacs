@@ -6,7 +6,9 @@
 (package-initialize)
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
-(load-theme 'busybee t)
+(require 'cl)
+
+(load-theme 'solarized-dark t)
 (cond
  (on-mac (add-to-list 'default-frame-alist '(font . "Monaco 18")))
  (on-linux (add-to-list 'default-frame-alist '(font . "Bitstream Vera Sans Mono-14"))))
@@ -97,6 +99,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
       (append
        '(("\\.cl\\'" . c-mode)
          ("\\.h\\'"  . c++-mode)
+         ("\\.glsl.*\\'"  . glsl-mode)
          ("\\.sc\\'" . python-mode))
        auto-mode-alist))
 
