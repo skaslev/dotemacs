@@ -8,7 +8,9 @@
 
 (require 'cl)
 
-(load-theme 'solarized-dark t)
+(if (display-graphic-p)
+    (load-theme 'solarized-dark t)
+    (load-theme 'busybee t))
 (cond
  (on-mac (add-to-list 'default-frame-alist '(font . "Monaco 18")))
  (on-linux (add-to-list 'default-frame-alist '(font . "Bitstream Vera Sans Mono-14"))))
