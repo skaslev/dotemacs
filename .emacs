@@ -115,6 +115,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (column-number-mode 1)
 (dynamic-completion-mode 1)
 (auto-compression-mode 1)
+(global-linum-mode 1)
 (global-hl-line-mode 1)
 (global-auto-revert-mode 1)
 (global-auto-complete-mode t)
