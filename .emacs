@@ -57,6 +57,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (global-evil-leader-mode)
 (evil-leader/set-leader "<SPC>")
 (evil-leader/set-key
+  "m" 'other-frame
   "/" 'evil-search-highlight-persist-remove-all
   "n" 'evil-next-buffer
   "p" 'evil-prev-buffer
