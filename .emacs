@@ -57,7 +57,6 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (global-evil-leader-mode)
 (evil-leader/set-leader "<SPC>")
 (evil-leader/set-key
-  "m" 'other-frame
   "/" 'evil-search-highlight-persist-remove-all
   "n" 'evil-next-buffer
   "p" 'evil-prev-buffer
@@ -65,6 +64,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   "c" 'smart-compile
   "d" 'kill-buffer
   "e" 'next-error
+  "o" 'other-frame
   "f" 'find-file
   "g" 'dired
   "h" 'google-this
