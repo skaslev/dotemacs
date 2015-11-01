@@ -83,8 +83,8 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (require 'evil-surround)
 (global-evil-surround-mode 1)
 
-(require 'p4)
-(setenv "P4CONFIG" ".p4config")
+(require 'auto-complete)
+(global-auto-complete-mode t)
 
 (require 'smart-compile)
 (setq smart-compile-alist
@@ -119,7 +119,6 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (global-linum-mode 1)
 (global-hl-line-mode 1)
 (global-auto-revert-mode 1)
-(global-auto-complete-mode t)
 
 (fset 'yes-or-no-p 'y-or-n-p)
 (setq confirm-nonexistent-file-or-buffer nil)
