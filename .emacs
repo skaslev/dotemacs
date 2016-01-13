@@ -61,6 +61,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   "n" 'evil-next-buffer
   "p" 'evil-prev-buffer
   "b" 'switch-to-buffer
+  "s" 'save-buffer
   "c" 'smart-compile
   "d" 'kill-buffer
   "e" 'next-error
