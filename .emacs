@@ -6,6 +6,9 @@
 (package-initialize)
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
+(when (memq window-system '(mac ns))
+  (exec-path-from-shell-initialize))
+
 (require 'cl)
 
 (if (display-graphic-p)
@@ -96,6 +99,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
          ("\\.js\\'"         . "node %f")
          ("\\.lua\\'"        . "lua %f")
          ("\\.py\\'"         . "python %f")
+         ("\\.cs\\'"         . "mcs %f && mono %n.exe")
          ("\\.go\\'"         . "go build %f && ./%n"))
        smart-compile-alist))
 
