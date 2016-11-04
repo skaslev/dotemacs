@@ -112,7 +112,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
        auto-mode-alist))
 
 (ido-mode 1)
-(menu-bar-mode 0)
+(if (not on-mac) (menu-bar-mode 0))
 (tool-bar-mode 0)
 (scroll-bar-mode 0)
 (show-paren-mode 1)
@@ -168,3 +168,6 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 
 (require 'google-c-style)
 (add-hook 'c-mode-common-hook 'google-set-c-style)
+
+(load-file (let ((coding-system-for-read 'utf-8))
+                (shell-command-to-string "agda-mode locate")))
