@@ -93,8 +93,8 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (require 'smart-compile)
 (setq smart-compile-alist
       (append
-       '(("\\.c\\'"          . "clang -Wall -O2 %f -o %n && ./%n")
-         ("\\.[Cc]+[Pp]*\\'" . "clang++ -std=c++14 -Wall -O2 %f -o %n && ./%n")
+       '(("\\.c\\'"          . "cc -Wall -O2 %f -o %n && ./%n")
+         ("\\.[Cc]+[Pp]*\\'" . "c++ -std=c++14 -Wall -O2 %f -o %n && ./%n")
          ("\\.hs\\'"         . "ghc -O2 %f && ./%n")
          ("\\.js\\'"         . "node %f")
          ("\\.lua\\'"        . "lua %f")
