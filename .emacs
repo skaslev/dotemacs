@@ -152,6 +152,13 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 (add-hook 'haskell-mode-hook 'interactive-haskell-mode)
+(add-hook 'go-mode-hook
+ (lambda ()
+   (add-hook 'before-save-hook 'gofmt-before-save)
+   (setq-default)
+   (setq tab-width 2)
+   (setq standard-indent 2)
+   (setq indent-tabs-mode t)))
 
 (defadvice c-lineup-arglist (around my activate)
   "Improve indentation of continued C++11 lambda function opened as argument."
@@ -169,5 +176,6 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (require 'google-c-style)
 (add-hook 'c-mode-common-hook 'google-set-c-style)
 
-(load-file (let ((coding-system-for-read 'utf-8))
-                (shell-command-to-string "agda-mode locate")))
+;; (load-file
+;;  (let ((coding-system-for-read 'utf-8))
+;;    (shell-command-to-string "agda-mode locate")))
