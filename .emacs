@@ -14,9 +14,10 @@
 (if (display-graphic-p)
     (load-theme 'solarized-dark t)
     (load-theme 'busybee t))
+
 (cond
  (on-mac (add-to-list 'default-frame-alist '(font . "Monaco 18")))
- (on-linux (add-to-list 'default-frame-alist '(font . "Bitstream Vera Sans Mono-14"))))
+ (on-linux (add-to-list 'default-frame-alist '(font . "Monospace-14"))))
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
 (global-set-key (kbd "C-+") 'text-scale-increase)
@@ -95,7 +96,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
       (append
        '(("\\.c\\'"          . "cc -Wall -O2 %f -o %n && ./%n")
          ("\\.[Cc]+[Pp]*\\'" . "c++ -std=c++14 -Wall -O2 %f -o %n && ./%n")
-         ("\\.hs\\'"         . "ghc -O2 %f && ./%n")
+         ("\\.hs\\'"         . "stack ghc -- -O2 %f && ./%n")
          ("\\.js\\'"         . "node %f")
          ("\\.lua\\'"        . "lua %f")
          ("\\.py\\'"         . "python %f")
