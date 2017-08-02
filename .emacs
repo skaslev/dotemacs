@@ -115,7 +115,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (ido-mode 1)
 (if (not on-mac) (menu-bar-mode 0))
 (tool-bar-mode 0)
-(scroll-bar-mode 0)
+(if (display-graphic-p) (scroll-bar-mode 0))
 (show-paren-mode 1)
 (which-function-mode 1)
 (line-number-mode 1)
@@ -180,3 +180,5 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 ;; (load-file
 ;;  (let ((coding-system-for-read 'utf-8))
 ;;    (shell-command-to-string "agda-mode locate")))
+
+;; (load "~/.emacs.d/lisp/PG/generic/proof-site")
