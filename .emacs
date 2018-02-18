@@ -113,6 +113,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
        auto-mode-alist))
 
 (ido-mode 1)
+(savehist-mode 1)
 (if (not on-mac) (menu-bar-mode 0))
 (tool-bar-mode 0)
 (if (display-graphic-p) (scroll-bar-mode 0))
