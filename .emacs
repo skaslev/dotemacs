@@ -1,3 +1,4 @@
+(setq is-gui     (display-graphic-p))
 (setq on-mac     (eq system-type 'darwin))
 (setq on-linux   (eq system-type 'gnu/linux))
 (setq on-windows (eq system-type 'windows-nt))
@@ -11,7 +12,7 @@
 
 (require 'cl)
 
-(if (display-graphic-p)
+(if is-gui
     (load-theme 'solarized-dark t)
     (load-theme 'busybee t))
 
@@ -114,9 +115,9 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 
 (ido-mode 1)
 (savehist-mode 1)
-(if (not on-mac) (menu-bar-mode 0))
+(if (not (and is-gui on-mac)) (menu-bar-mode 0))
 (tool-bar-mode 0)
-(if (display-graphic-p) (scroll-bar-mode 0))
+(if is-gui (scroll-bar-mode 0))
 (show-paren-mode 1)
 (which-function-mode 1)
 (line-number-mode 1)
