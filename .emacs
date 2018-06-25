@@ -176,8 +176,13 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
             0                           ; no additional indent
           ad-do-it)))                   ; default behavior
 
+(defun linux-set-c-style ()
+  (c-set-style "linux")
+  (setq indent-tabs-mode t))
+(add-hook 'c-mode-hook 'linux-set-c-style)
+
 (require 'google-c-style)
-(add-hook 'c-mode-common-hook 'google-set-c-style)
+(add-hook 'c++-mode-hook 'google-set-c-style)
 
 ;; (load-file
 ;;  (let ((coding-system-for-read 'utf-8))
