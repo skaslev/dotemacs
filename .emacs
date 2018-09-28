@@ -63,6 +63,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (evil-leader/set-leader "<SPC>")
 (evil-leader/set-key
   "/" 'evil-search-highlight-persist-remove-all
+  "a" 'pop-tag-mark
   "n" 'evil-next-buffer
   "p" 'evil-prev-buffer
   "b" 'switch-to-buffer
@@ -108,7 +109,6 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (setq auto-mode-alist
       (append
        '(("\\.cl\\'" . c-mode)
-         ("\\.h\\'"  . c++-mode)
          ("\\.glsl.*\\'"  . glsl-mode)
          ("\\.sc\\'" . python-mode))
        auto-mode-alist))
