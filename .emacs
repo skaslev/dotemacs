@@ -97,13 +97,14 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (setq smart-compile-alist
       (append
        '(("\\.c\\'"          . "cc -Wall -O2 %f -o %n && ./%n")
-         ("\\.[Cc]+[Pp]*\\'" . "c++ -std=c++14 -Wall -O2 %f -o %n && ./%n")
+         ("\\.[Cc]+[Pp]+\\'" . "c++ -std=c++14 -Wall -O2 %f -o %n && ./%n")
+         ("\\.cs\\'"         . "mcs %f && mono %n.exe")
+         ("\\.go\\'"         . "go build %f && ./%n")
          ("\\.hs\\'"         . "stack ghc -- -O2 %f && ./%n")
          ("\\.js\\'"         . "node %f")
          ("\\.lua\\'"        . "lua %f")
          ("\\.py\\'"         . "python %f")
-         ("\\.cs\\'"         . "mcs %f && mono %n.exe")
-         ("\\.go\\'"         . "go build %f && ./%n"))
+         ("\\.tex\\'"        . "xelatex -shell-escape %f"))
        smart-compile-alist))
 
 (setq auto-mode-alist
