@@ -136,8 +136,8 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (setq ido-enable-flex-matching t)
 (setq ido-create-new-buffer 'always)
 (setq lua-indent-level 2)
-(setq shell-file-name "bash")
-(setq explicit-shell-file-name "bash")
+(setq shell-file-name "zsh")
+(setq explicit-shell-file-name "zsh")
 (setq kill-buffer-query-functions
       (remq 'process-kill-buffer-query-function kill-buffer-query-functions))
 
