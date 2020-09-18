@@ -5,12 +5,7 @@
 
 (require 'package)
 (package-initialize)
-(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
-
-(when (memq window-system '(mac ns))
-  (exec-path-from-shell-initialize))
-
-(require 'cl)
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
 
 (if is-gui
     (load-theme 'solarized-dark t)
