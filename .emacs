@@ -136,8 +136,9 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (setq ido-enable-flex-matching t)
 (setq ido-create-new-buffer 'always)
 (setq lua-indent-level 2)
-(setq shell-file-name "zsh")
-(setq explicit-shell-file-name "zsh")
+(if on-mac
+  (setq shell-file-name "zsh")
+  (setq explicit-shell-file-name "zsh"))
 (setq kill-buffer-query-functions
       (remq 'process-kill-buffer-query-function kill-buffer-query-functions))
 
@@ -193,7 +194,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (solarized-theme smart-compile lean-mode haskell-mode google-c-style evil-surround evil-search-highlight-persist evil-leader auto-complete))))
+    (asn1-mode auto-complete busybee-theme caml dockerfile-mode evil evil-leader evil-search-highlight-persist evil-surround go-mode google-c-style google-this haskell-mode lean-mode lua-mode protobuf-mode smart-compile solarized-theme tuareg))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
