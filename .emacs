@@ -185,3 +185,18 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 ;;    (shell-command-to-string "agda-mode locate")))
 
 ;; (load "~/.emacs.d/lisp/PG/generic/proof-site")
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (solarized-theme smart-compile lean-mode haskell-mode google-c-style evil-surround evil-search-highlight-persist evil-leader auto-complete))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
