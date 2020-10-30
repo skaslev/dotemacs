@@ -194,7 +194,8 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(asn1-mode auto-complete busybee-theme caml cmake-mode dockerfile-mode evil evil-leader evil-search-highlight-persist evil-surround glsl-mode go-mode google-c-style google-this haskell-mode lean-mode lua-mode protobuf-mode smart-compile solarized-theme tuareg)))
+   (quote
+    (asn1-mode auto-complete busybee-theme caml cmake-mode csharp-mode csproj-mode dockerfile-mode evil evil-leader evil-search-highlight-persist evil-surround glsl-mode go-mode google-c-style google-this haskell-mode lean-mode lua-mode protobuf-mode smart-compile solarized-theme tuareg))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
