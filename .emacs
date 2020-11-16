@@ -1,15 +1,14 @@
-(setq is-gui     (display-graphic-p))
-(setq on-mac     (eq system-type 'darwin))
-(setq on-linux   (eq system-type 'gnu/linux))
-(setq on-windows (eq system-type 'windows-nt))
+(setq
+ is-gui     (display-graphic-p)
+ on-mac     (eq system-type 'darwin)
+ on-linux   (eq system-type 'gnu/linux)
+ on-windows (eq system-type 'windows-nt))
 
 (require 'package)
 (package-initialize)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
 
-(if is-gui
-    (load-theme 'solarized-dark t)
-    (load-theme 'busybee t))
+(load-theme (if is-gui 'solarized-dark 'busybee) t)
 
 (cond
  (on-linux (add-to-list 'default-frame-alist '(font . "Monospace-14")))
@@ -26,9 +25,7 @@
 
 (require 'evil)
 (setq evil-emacs-state-modes
-      (append
-       '(haskell-interactive-mode)
-       evil-emacs-state-modes))
+      (append '(haskell-interactive-mode) evil-emacs-state-modes))
 (setq evil-lookup-func #'man)
 (evil-define-motion evil-lookup ()
   (call-interactively evil-lookup-func))
@@ -106,7 +103,10 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (setq auto-mode-alist
       (append
        '(("\\.cl\\'" . c-mode)
-         ("\\.glsl.*\\'"  . glsl-mode)
+         ("\\.glsl.*\\'" . glsl-mode)
+         ("\\.hlsl.*\\'" . glsl-mode)
+         ("\\.cg.*\\'" . glsl-mode)
+         ("\\.shader.*\\'" . glsl-mode)
          ("\\.sc\\'" . python-mode))
        auto-mode-alist))
 
@@ -126,30 +126,33 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (global-auto-revert-mode 1)
 
 (fset 'yes-or-no-p 'y-or-n-p)
-(setq confirm-nonexistent-file-or-buffer nil)
-(setq inhibit-startup-message t)
-(setq visible-bell nil)
-(setq ring-bell-function 'ignore)
-(setq scroll-step 1)
-(setq make-backup-files nil)
-(setq windmove-wrap-around t)
-(setq parens-require-spaces nil)
-(setq ido-enable-flex-matching t)
-(setq ido-create-new-buffer 'always)
-(setq lua-indent-level 2)
+(setq
+ confirm-nonexistent-file-or-buffer nil
+ inhibit-startup-message t
+ visible-bell nil
+ ring-bell-function 'ignore
+ scroll-step 1
+ make-backup-files nil
+ windmove-wrap-around t
+ parens-require-spaces nil
+ ido-enable-flex-matching t
+ ido-create-new-buffer 'always)
+
 (if on-mac
-  (setq shell-file-name "zsh")
-  (setq explicit-shell-file-name "zsh"))
+  (setq shell-file-name "zsh"
+        explicit-shell-file-name "zsh"))
 (setq kill-buffer-query-functions
       (remq 'process-kill-buffer-query-function kill-buffer-query-functions))
 
-(setq-default tab-width 8)
-(setq-default fill-column 80)
-(setq-default default-fill-column 80)
-(setq-default indent-tabs-mode nil)
-(setq-default show-trailing-whitespace t)
-(setq-default scroll-preserve-screen-position t)
-(setq-default js-indent-level 2)
+(setq-default
+ tab-width 8
+ fill-column 80
+ default-fill-column 80
+ indent-tabs-mode nil
+ show-trailing-whitespace t
+ scroll-preserve-screen-position t
+ lua-indent-level 2
+ js-indent-level 2)
 
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 (add-hook 'haskell-mode-hook 'interactive-haskell-mode)
