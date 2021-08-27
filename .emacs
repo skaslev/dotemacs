@@ -23,6 +23,11 @@
 (global-set-key (kbd "C-c n") 'linum-mode)
 (global-set-key (kbd "C-c w") 'whitespace-mode)
 
+(defun sort-lines-nocase ()
+  (interactive)
+  (let ((sort-fold-case t))
+    (call-interactively 'sort-lines)))
+
 (require 'evil)
 (setq evil-emacs-state-modes
       (append '(haskell-interactive-mode) evil-emacs-state-modes))
