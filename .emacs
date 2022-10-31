@@ -8,7 +8,7 @@
 (package-initialize)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
 
-(load-theme (if is-gui 'solarized-dark 'busybee) t)
+(load-theme 'nord t)
 
 (cond
  (on-linux (add-to-list 'default-frame-alist '(font . "Monospace-14")))
@@ -202,7 +202,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(asn1-mode auto-complete busybee-theme caml cmake-mode csharp-mode csproj-mode dockerfile-mode evil evil-leader evil-search-highlight-persist evil-surround glsl-mode go-mode google-c-style google-this json-mode haskell-mode lean-mode lua-mode protobuf-mode qml-mode qt-pro-mode rust-mode smart-compile solarized-theme tuareg)))
+   '(asn1-mode auto-complete caml cmake-mode csharp-mode csproj-mode dockerfile-mode evil evil-leader evil-search-highlight-persist evil-surround idris-mode glsl-mode go-mode google-c-style google-this json-mode haskell-mode lean-mode lua-mode nord-theme php-mode powershell protobuf-mode qml-mode qt-pro-mode rust-mode smart-compile tuareg zig-mode yaml-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
