@@ -20,6 +20,7 @@
 (global-set-key (kbd "C-=") 'text-scale-increase)
 (global-set-key (kbd "C--") 'text-scale-decrease)
 
+(require 'linum)
 (global-set-key (kbd "C-c n") 'linum-mode)
 (global-set-key (kbd "C-c w") 'whitespace-mode)
 
