@@ -20,8 +20,7 @@
 (global-set-key (kbd "C-=") 'text-scale-increase)
 (global-set-key (kbd "C--") 'text-scale-decrease)
 
-(require 'linum)
-(global-set-key (kbd "C-c n") 'linum-mode)
+(global-set-key (kbd "C-c n") 'display-line-numbers-mode)
 (global-set-key (kbd "C-c w") 'whitespace-mode)
 
 (defun sort-lines-nocase ()
@@ -76,7 +75,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   "h" 'google-this
   "j" 'scroll-up-command
   "k" 'scroll-down-command
-  "l" 'linum-mode
+  "l" 'display-line-numbers-mode
   "r" 'find-grep
   "t" 'delete-trailing-whitespace
   "w" 'whitespace-mode)
@@ -127,7 +126,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (column-number-mode 1)
 (dynamic-completion-mode 1)
 (auto-compression-mode 1)
-(global-linum-mode 1)
+(global-display-line-numbers-mode 1)
 (global-hl-line-mode 1)
 (global-auto-revert-mode 1)
 
