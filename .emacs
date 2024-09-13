@@ -101,7 +101,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
          ("\\.hs\\'"         . "stack ghc -- -O2 %f && ./%n")
          ("\\.js\\'"         . "node %f")
          ("\\.lua\\'"        . "lua %f")
-         ("\\.py\\'"         . "python %f")
+         ("\\.py\\'"         . "python3 %f")
          ("\\.tex\\'"        . "xelatex -shell-escape %f"))
        smart-compile-alist))
 
@@ -202,7 +202,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(asn1-mode auto-complete caml cmake-mode csharp-mode csproj-mode dockerfile-mode evil evil-leader evil-search-highlight-persist evil-surround idris-mode glsl-mode go-mode google-c-style google-this json-mode haskell-mode lean-mode lua-mode nord-theme php-mode powershell protobuf-mode qml-mode qt-pro-mode rust-mode smart-compile tuareg typescript-mode zig-mode yaml-mode)))
+   '(jsonrpc asn1-mode auto-complete caml cmake-mode csharp-mode csproj-mode dockerfile-mode evil evil-leader evil-search-highlight-persist evil-surround idris-mode glsl-mode go-mode google-c-style google-this json-mode haskell-mode lean-mode lua-mode nord-theme php-mode powershell protobuf-mode qml-mode qt-pro-mode rust-mode smart-compile tuareg typescript-mode yaml-mode zig-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
