@@ -192,7 +192,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   (c-set-style "linux")
   (setq c-basic-offset 4)
   (setq indent-tabs-mode nil))
-(add-hook 'c-mode-hook 'linux-set-c-style)
+(add-hook 'c-mode-hook 'redis-set-c-style)
 
 (require 'google-c-style)
 (add-hook 'c++-mode-hook 'google-set-c-style)
