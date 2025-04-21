@@ -149,6 +149,8 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (setq kill-buffer-query-functions
       (remq 'process-kill-buffer-query-function kill-buffer-query-functions))
 
+(exec-path-from-shell-initialize)
+
 (setq-default
  tab-width 8
  fill-column 80
@@ -190,6 +192,11 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (require 'google-c-style)
 (add-hook 'c++-mode-hook 'google-set-c-style)
 
+(defun set-asm-style ()
+  (setq asm-comment-char ?\#)
+  (setq indent-tabs-mode t))
+(add-hook 'asm-mode-hook 'set-asm-style)
+
 ;; (load-file
 ;;  (let ((coding-system-for-read 'utf-8))
 ;;    (shell-command-to-string "agda-mode locate")))
@@ -202,4 +209,10 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(asn1-mode auto-complete caml cmake-mode csharp-mode csproj-mode dockerfile-mode evil evil-leader evil-search-highlight-persist evil-surround glsl-mode go-mode google-c-style google-this haskell-mode idris-mode lean-mode lua-mode php-mode powershell protobuf-mode qml-mode qt-pro-mode rust-mode smart-compile tuareg typescript-mode yaml-mode zig-mode)))
+   '(exec-path-from-shell asn1-mode auto-complete caml cmake-mode csharp-mode csproj-mode dockerfile-mode evil evil-leader evil-search-highlight-persist evil-surround glsl-mode go-mode google-c-style google-this haskell-mode idris-mode lean-mode lua-mode php-mode powershell protobuf-mode qml-mode qt-pro-mode rust-mode smart-compile tuareg typescript-mode yaml-mode zig-mode)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
