@@ -187,6 +187,10 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (defun linux-set-c-style ()
   (c-set-style "linux")
   (setq indent-tabs-mode t))
+(defun redis-set-c-style ()
+  (c-set-style "linux")
+  (setq c-basic-offset 4)
+  (setq indent-tabs-mode nil))
 (add-hook 'c-mode-hook 'linux-set-c-style)
 
 (require 'google-c-style)
