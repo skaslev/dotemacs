@@ -28,6 +28,7 @@
   (let ((sort-fold-case t))
     (call-interactively 'sort-lines)))
 
+(setq evil-want-C-u-scroll t)
 (require 'evil)
 (setq evil-emacs-state-modes
       (append '(haskell-interactive-mode) evil-emacs-state-modes))
