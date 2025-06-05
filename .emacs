@@ -206,8 +206,12 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   (setq indent-tabs-mode t))
 (add-hook 'asm-mode-hook 'set-asm-style)
 
-;; (load-file
-;;  (let ((coding-system-for-read 'utf-8))
-;;    (shell-command-to-string "agda-mode locate")))
+(load-file
+ (let ((coding-system-for-read 'utf-8))
+   (shell-command-to-string "agda-mode locate")))
+
+(defun agda-hook ()
+  (define-key evil-normal-state-local-map (kbd "M-.") 'agda2-goto-definition-keyboard))
+(add-hook 'agda2-mode-hook 'agda-hook)
 
 ;; (load "~/.emacs.d/lisp/PG/generic/proof-site")
