@@ -96,6 +96,20 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (require 'auto-complete)
 (global-auto-complete-mode t)
 
+(require 'company)
+(add-hook 'after-init-hook 'global-company-mode)
+
+(require 'lsp-mode)
+(add-hook 'c-mode-hook 'lsp-deferred)
+(add-hook 'c++-mode-hook 'lsp-deferred)
+(setq lsp-clients-clangd-args
+      '("-j=4"                  ;; Use 4 threads for indexing
+        "-background-index"     ;; Index in the background
+        "--log=error"           ;; Only log errors
+        "--clang-tidy"          ;; Enable clang-tidy checks
+        "--enable-config"))     ;; Enable reading .clangd files
+(evil-define-key 'normal 'global (kbd "g r") 'lsp-find-references)
+
 (require 'smart-compile)
 (setq smart-compile-alist
       (append
